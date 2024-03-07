@@ -9,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 var sql = builder.Configuration.GetConnectionString("sql");
 builder.Services.AddControllers();
 builder.Services.AddDbContext<EShopDbContext>(options=>options.UseSqlServer(sql));
+builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

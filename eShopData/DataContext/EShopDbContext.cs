@@ -13,5 +13,6 @@ namespace eShopData.DataContext
         public EShopDbContext(DbContextOptions<EShopDbContext> options) : base(options) { }
 
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> products { get; set; }
     }
 }
